@@ -1,0 +1,17 @@
+h3{
+    text-align: center;
+}
+
+.container1{
+    width: 400px;
+    margin: auto;
+    box-shadow: 0px 0px 15px lightskyblue;
+    padding: 20px;
+}
+
+
+
+button{
+    cursor: pointer;
+    width: 100%;
+}
