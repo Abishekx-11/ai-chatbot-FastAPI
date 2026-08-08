@@ -17,3 +17,11 @@ def home(request:Request):
 
     )
 
+
+@app.post("/chat")
+async def Chat(request:Request):
+    request_data = await request.json()
+    user_message = request_data["message"]
+
+    return { "message": f"You said {user_message}"}
+
