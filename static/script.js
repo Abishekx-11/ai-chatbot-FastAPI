@@ -3,6 +3,8 @@ document.getElementById("first_form").addEventListener("submit", async function(
     event.preventDefault();
 
     let userMessage = document.getElementById("chatting").value;
+    let chatbox = document.getElementById("chat-box");
+    chatbox.innerHTML += `<p><strong>You: </strong> ${userMessage}</p>`;
 
     let serverResponse = await fetch("/chat", {
         method: "POST", 
@@ -11,7 +13,8 @@ document.getElementById("first_form").addEventListener("submit", async function(
     });
 
     let responseData = await serverResponse.json();
-    document.getElementById("output").innerText = responseData.message;
+    chatbox.innerHTML += `<p><strong>AI: </strong> ${responseData.message}</p>`;
 
+    document.getElementById("chatting").value = "";
 
 });
