@@ -37,7 +37,7 @@ async def Chat(request:Request):
     request_data = await request.json()
     user_message = request_data["message"]
 
-    chat_history.append({               # appending user message in list as dictionary
+    chat_history.append({               #appending user message in list as dictionary
         "role": "user",
         "content":user_message
     })
